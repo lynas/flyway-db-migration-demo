@@ -29,3 +29,16 @@ flyway {
 8. Inside put your database change DDL commands
 9. Run flyway:flywayMigrate gradle task to migrate db
 10. If working with a new database step 4 is not required
+11. If you want automatic db migration add following bean
+
+```
+@Bean
+    fun flywayMigrationStrategy(): FlywayMigrationStrategy? {
+        return FlywayMigrationStrategy { }
+    }
+```
+12. If you want to disable flyway in the spring boot application use following property
+
+```
+spring.flyway.enabled=false
+```

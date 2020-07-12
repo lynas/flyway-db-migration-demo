@@ -1,0 +1,1 @@
+alter table employee add column dob varchar(200) null ;
